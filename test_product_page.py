@@ -7,4 +7,4 @@ def test_quest_can_add_product_to_basket(browser):
     product.open()
     product.add_to_basket()
     product.solve_quiz_and_get_code()
-    sleep(10)
+    sleep(30)

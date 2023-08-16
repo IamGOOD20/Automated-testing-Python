@@ -3,7 +3,6 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
-    # url = 'http://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
 
     def should_be_login_page(self):
         self.should_be_login_url()

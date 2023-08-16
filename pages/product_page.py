@@ -12,4 +12,3 @@ class ProductPage(BasePage):
 
     def click_basket_button(self):
         self.browser.find_element(*ProductPageLocators.BASKET_BUTTON).click()
-    # def should_add_

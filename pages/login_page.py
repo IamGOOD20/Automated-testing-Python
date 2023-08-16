@@ -3,7 +3,7 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
-    url = 'http://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
+    # url = 'http://selenium1py.pythonanywhere.com/en-gb/accounts/login/'
 
     def should_be_login_page(self):
         self.should_be_login_url()
@@ -11,7 +11,6 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        print('current link: ', self.browser.current_url)
         assert '/login' in self.browser.current_url, '"login not found in current url'
 
     def should_be_login_form(self):

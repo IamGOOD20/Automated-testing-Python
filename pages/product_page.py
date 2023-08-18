@@ -21,15 +21,19 @@ class ProductPage(BasePage):
         self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
 
     def get_product_title(self):
-        return self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text()
+        assert self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE), 'product title not found'
+        product_title = self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text
+        return product_title
 
     def get_product_price(self):
-        return self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text()
+        assert self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE), 'product price not found'
+        product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
+        return product_price
 
     def should_be_message_added_product_title_in_basket(self):
-        assert self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text() \
+        assert self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text \
                in self.get_product_title(), "The product wasn't added to basket" # self.browser.find_element(*ProductPageLocators.BASKET_ADDED_MASSAGE)
 
     def should_be_correct_basket_total_after_added_product(self):
-        assert self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text() \
+        assert self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text \
                == self.get_product_price(), 'The price of product != total of basket'# self.browser.find_element
